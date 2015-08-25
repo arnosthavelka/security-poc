@@ -1,10 +1,11 @@
 package com.github.aha.poc.security.controller;
 
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @see http://www.journaldev.com/8748/spring-4-mvc-security-managing-roles-example
@@ -16,28 +17,19 @@ public class LoginController {
 //	public String welcomePage() {
 //		return "index";
 //	}
-//
-//	@RequestMapping(value = { "/homePage" }, method = RequestMethod.GET)
-//	public ModelAndView homePage() {
-//		ModelAndView model = new ModelAndView();
-//		model.setViewName("homePage");
-//		return model;
-//	}
 
-	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
-	public ModelAndView loginPage(@RequestParam(value = "error", required = false) String error,
-			@RequestParam(value = "logout", required = false) String logout) {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String loginPage(@RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout, Map<String, Object> model) {
 
-		ModelAndView model = new ModelAndView();
 		if (error != null) {
-			model.addObject("error", "Invalid Credentials provided.");
+			model.put("error", "Invalid Credentials provided.");
 		}
 
 		if (logout != null) {
-			model.addObject("message", "Logged out finished successfully.");
+			model.put("message", "Logged out finished successfully.");
 		}
 
-		model.setViewName("loginPage");
-		return model;
+		return "loginPage";
 	}
 }

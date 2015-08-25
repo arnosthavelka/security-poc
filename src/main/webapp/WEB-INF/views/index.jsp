@@ -9,7 +9,7 @@
 	</head> 
 	<body>
 		<h3>Welcome to Security-POC</h3>
-		<c:url value="/loginPage" var="messageUrl" />
+		<c:url value="/login" var="messageUrl" />
 		<a href="${messageUrl}">Login</a>
 	</body>
 	

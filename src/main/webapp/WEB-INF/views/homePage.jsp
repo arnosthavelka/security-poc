@@ -1,5 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<a href="${pageContext.request.contextPath}/userPage">User page</a> | <a href="${pageContext.request.contextPath}/adminPage">Admin page</a> | 
+<a href="${pageContext.request.contextPath}/user">User page</a> | <a href="${pageContext.request.contextPath}/admin">Admin page</a> | 
 <c:if test="${pageContext.request.userPrincipal.name != null}">
     <a href="javascript:document.getElementById('logout').submit()">Logout</a>
 </c:if>

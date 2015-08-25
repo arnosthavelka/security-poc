@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
@@ -22,16 +22,16 @@ public class LoginSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/homePage").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-			.antMatchers("/userPage").access("hasRole('ROLE_USER')")
-            .antMatchers("/adminPage").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/home").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
+			.antMatchers("/user").access("hasRole('ROLE_USER')")
+            .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
 			.and()
-				.formLogin().loginPage("/loginPage")
-				.defaultSuccessUrl("/homePage")
-				.failureUrl("/loginPage?error")
+				.formLogin().loginPage("/login")
+				.defaultSuccessUrl("/home")
+				.failureUrl("/login?error")
 				.usernameParameter("username").passwordParameter("password")
 			.and()
-				.logout().logoutSuccessUrl("/loginPage?logout");
+				.logout().logoutSuccessUrl("/login?logout");
 
 	}
 }

@@ -17,10 +17,12 @@ See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-
     </appender>
 
 	<!--<logger name="org.hibernate" level="debug"/> -->
-   <!-- Uncomment and add your logger here:
-    <logger name="org.springframework.samples.service.service" level="debug"/> -->
+    <logger name="org.springframework.web" level="info"/>
          
     <root level="info">
         <appender-ref ref="console"/>
     </root>
+    
+	<logger name="com.github.aha.poc.security" level="DEBUG" additivity="false"/>
+	    
 </configuration>
