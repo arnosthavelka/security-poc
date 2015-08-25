@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body onload='document.loginForm.username.focus();'>
-    <h3>Security-POC</h3>
+    <h3>Login page</h3>
+    <h4>Security-POC</h4>
  
-    <c:if test="${not empty error}"><div>${error}</div></c:if>
-    <c:if test="${not empty message}"><div>${message}</div></c:if>
+    <c:if test="${not empty loginMessage}"><div>${loginMessage}</div></c:if>
  
     <form name='login' action="<c:url value='/login' />" method='POST'>
         <table>

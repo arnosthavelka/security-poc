@@ -22,16 +22,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-			.antMatchers("/home").access("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
-			.antMatchers("/user").access("hasRole('ROLE_USER')")
-            .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
-			.and()
-				.formLogin().loginPage("/login")
+				.antMatchers("/", "/home").permitAll()
+				.antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
+				.anyRequest().authenticated().and()
+			.formLogin()
+				.loginPage("/login")
 				.defaultSuccessUrl("/home")
-				.failureUrl("/login?error")
-				.usernameParameter("username").passwordParameter("password")
-			.and()
-				.logout().logoutSuccessUrl("/login?logout");
+				.permitAll()
+				.usernameParameter("username").passwordParameter("password").and()
+			.logout()
+				.permitAll();
 
 	}
 }

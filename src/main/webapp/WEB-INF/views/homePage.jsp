@@ -7,12 +7,7 @@
 <h3>Home Page</h3>
 <h4>Security-POC</h4>
 
-<ul>
-    <li>Java 8 tutorial</li>
-    <li>Spring tutorial</li>
-    <li>Gradle tutorial</li>
-    <li>BigData tutorial</li>
-</ul>
+<p>Some content ...</p>
  
 <c:url value="/logout" var="logoutUrl" />
 <form id="logout" action="${logoutUrl}" method="post" >

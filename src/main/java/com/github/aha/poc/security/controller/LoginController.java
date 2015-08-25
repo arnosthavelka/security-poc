@@ -23,11 +23,11 @@ public class LoginController {
 			@RequestParam(value = "logout", required = false) String logout, Map<String, Object> model) {
 
 		if (error != null) {
-			model.put("error", "Invalid Credentials provided.");
+			model.put("loginMessage", "Invalid Credentials provided.");
 		}
 
 		if (logout != null) {
-			model.put("message", "Logged out finished successfully.");
+			model.put("loginMessage", "Logged out finished successfully.");
 		}
 
 		return "loginPage";
