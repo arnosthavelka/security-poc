@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.security.config;
+package com.github.aha.poc.security.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.JstlView;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan("com.asseco.aha.poc.security")
+@ComponentScan("com.github.aha.poc.security")
 public class LoginApplicationConfig {
 
 	@Bean

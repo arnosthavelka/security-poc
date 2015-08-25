@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.security.config.core;
+package com.github.aha.poc.security.config.core;
 
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 

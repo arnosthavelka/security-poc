@@ -1,8 +1,8 @@
-package com.asseco.aha.poc.security.config.core;
+package com.github.aha.poc.security.config.core;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import com.asseco.aha.poc.security.config.LoginApplicationConfig;
+import com.github.aha.poc.security.config.LoginApplicationConfig;
 
 public class SpringMVCWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 

@@ -1,4 +1,4 @@
-package com.asseco.aha.poc.security.config;
+package com.github.aha.poc.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
