@@ -12,34 +12,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
-	public ModelAndView welcomePage() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("index");
-		return model;
-	}
+//	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+//	public String welcomePage() {
+//		return "index";
+//	}
+//
+//	@RequestMapping(value = { "/homePage" }, method = RequestMethod.GET)
+//	public ModelAndView homePage() {
+//		ModelAndView model = new ModelAndView();
+//		model.setViewName("homePage");
+//		return model;
+//	}
 
-	@RequestMapping(value = { "/homePage" }, method = RequestMethod.GET)
-	public ModelAndView homePage() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("homePage");
-		return model;
-	}
-
-    @RequestMapping(value = {"/userPage"}, method = RequestMethod.GET)
-    public ModelAndView userPage() {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("userPage");
-        return model;
-    }
-     
-    @RequestMapping(value = {"/adminPage"}, method = RequestMethod.GET)
-    public ModelAndView adminPage() {
-        ModelAndView model = new ModelAndView();
-        model.setViewName("adminPage");
-        return model;
-    }
-    
 	@RequestMapping(value = "/loginPage", method = RequestMethod.GET)
 	public ModelAndView loginPage(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
