@@ -19,7 +19,7 @@ public class LoginController {
 	@Autowired
 	private MessageSource resource;
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = ActionConsts.LOGIN, method = RequestMethod.GET)
 	public String loginPage(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Map<String, Object> model) {
 
