@@ -15,10 +15,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-		authenticationMgr.inMemoryAuthentication()
-			.withUser("aha").password("aha").authorities("ROLE_USER")
-			.and()
-			.withUser("admin").password("admin").authorities("ROLE_USER", "ROLE_ADMIN");
+//		authenticationMgr.inMemoryAuthentication()
+//			.withUser("aha").password("aha").authorities("ROLE_USER")
+//			.and()
+//			.withUser("admin").password("admin").authorities("ROLE_USER", "ROLE_ADMIN");
+		
+		authenticationMgr.ldapAuthentication()
+			.userDnPatterns("uid={0},ou=people")
+			.groupSearchBase("ou=groups")
+			.contextSource().ldif("classpath:test-server.ldif");		
 	}
 
 	@Override
