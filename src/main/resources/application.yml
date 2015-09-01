@@ -3,3 +3,23 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+auth:
+  type: ACTIVE_DIRECTORY # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
+  ad:
+    domain: to2.to2cz.cz
+    url: ldap://to2.to2cz.cz:389/
+    filter: (&(objectClass=user)(samaccountname={0}))
+  
+logging:
+  level:
+    com:
+      github:
+        aha:
+          poc:
+            security: DEBUG
+    org:
+      springframework:
+        security:
+          ldap:
+            authentication:
+              ad: DEBUG
