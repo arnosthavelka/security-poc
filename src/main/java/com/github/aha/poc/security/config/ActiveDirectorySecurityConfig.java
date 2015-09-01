@@ -15,7 +15,6 @@ import com.github.aha.poc.security.controller.ActionConsts;
 
 @Configuration
 @EnableWebSecurity
-//@ConditionalOnClass(org.apache.directory.server.core.DefaultDirectoryService.class)
 @ConditionalOnProperty(prefix = "auth", name = "type", havingValue = "ACTIVE_DIRECTORY")
 public class ActiveDirectorySecurityConfig extends WebSecurityConfigurerAdapter {
 	

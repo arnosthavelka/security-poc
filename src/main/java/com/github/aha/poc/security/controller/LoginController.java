@@ -5,6 +5,8 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,5 +34,17 @@ public class LoginController {
 		}
 
 		return "loginPage";
+	}
+	
+	@RequestMapping(value = ActionConsts.USER, method = RequestMethod.GET)
+	public String userPage(Map<String, Object> model) {
+
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			UserDetails ud = ((UserDetails)principal);
+			model.put("userDetail", ud);
+		}
+
+		return "userPage";
 	}
 }
