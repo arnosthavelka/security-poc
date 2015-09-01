@@ -4,7 +4,7 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 auth:
-  type: ACTIVE_DIRECTORY # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
+  type: APACHE_DS # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
   ad:
     domain: my.domain.com
     url: ldap://my.domain.com:389/
