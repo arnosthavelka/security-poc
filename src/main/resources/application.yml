@@ -6,9 +6,9 @@ spring:
 auth:
   type: ACTIVE_DIRECTORY # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
   ad:
-    domain: to2.to2cz.cz
-    url: ldap://to2.to2cz.cz:389/
-    filter: (&(objectClass=user)(samaccountname={0}))
+    domain: my.domain.com
+    url: ldap://my.domain.com:389/
+    filter: (&(sAMAccountName={0})(objectclass=user))
   
 logging:
   level:

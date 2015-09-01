@@ -1,15 +1,10 @@
 package com.github.aha.poc.security.config;
 
-import java.util.Arrays;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -50,21 +45,9 @@ public class ActiveDirectorySecurityConfig extends WebSecurityConfigurerAdapter 
 	}
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-//		authenticationMgr.ldapAuthentication()
-////				.userDnPatterns("samaccountname={0}")
-////				.groupSearchBase("DC=to2,DC=to2cz,DC=cz")
-////				.contextSource().url("ldap://to2.to2cz.cz:389/");
-//		.userDnPatterns("uid={0},ou=people")
-//		.groupSearchBase("ou=groups")
-//		.contextSource();
-		authenticationMgr.authenticationProvider(activeDirectoryLdapAuthenticationProvider()).userDetailsService(userDetailsService());
+		authenticationMgr.authenticationProvider(activeDirectoryLdapAuthenticationProvider());
 	}
 
-    @Bean
-    public AuthenticationManager authenticationManager() {
-         return new ProviderManager(Arrays.asList(activeDirectoryLdapAuthenticationProvider()));
-    }
-    @Bean
     public AuthenticationProvider activeDirectoryLdapAuthenticationProvider() {
          ActiveDirectoryLdapAuthenticationProvider provider = new ActiveDirectoryLdapAuthenticationProvider(domain, url);
          provider.setUseAuthenticationRequestCredentials(true);
