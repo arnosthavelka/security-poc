@@ -15,7 +15,7 @@ public class AuthenticationListener implements ApplicationListener<InteractiveAu
 	public void onApplicationEvent(InteractiveAuthenticationSuccessEvent event) {
 //		UserDetails userDetails = (UserDetails) event.getAuthentication().getPrincipal();
 		
-		LOG.info("Authentication: user={}", event.getAuthentication().getName());
+		LOG.info("Authenticated user={}", event.getAuthentication().getName());
 	}
 
 }

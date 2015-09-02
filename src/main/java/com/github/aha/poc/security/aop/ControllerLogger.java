@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class AdProviderModifier {
+public class ControllerLogger {
 	
-	private static final Logger LOG = LoggerFactory.getLogger(AdProviderModifier.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ControllerLogger.class);
 
 	/**
 	 * Just AOP example (to verify the functionality)
