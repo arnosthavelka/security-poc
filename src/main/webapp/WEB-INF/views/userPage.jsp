@@ -9,14 +9,21 @@
 		<h3><spring:message code="user.label"/></h3>
 		<h4><spring:message code="app.name"/></h4>
 		 
-		<strong><spring:message code="user.name"/></strong>: ${userDetail.username}<br/>
-		<strong><spring:message code="user.dn"/></strong>: ${userDetail.dn}<br/>
-		<strong><spring:message code="user.roles"/></strong>:
-		<ul>
-			<c:forEach var="role" items="${userDetail.authorities}">
-				<li>${role}</li>
-			</c:forEach>
-		</ul>
+		<strong><spring:message code="user.name"/></strong>: ${userDetail.username}<br />
+		<c:catch var="exception">
+			<c:if test="${not empty userDetail.dn}">
+			   <strong><spring:message code="user.dn"/></strong>: ${userDetail.dn}<br />
+			</c:if>
+			<c:if test="${not empty userDetail.authorities}">
+				<strong><spring:message code="user.roles"/></strong>:
+				<ul>
+					<c:forEach var="role" items="${userDetail.authorities}">
+						<li>${role}</li>
+					</c:forEach>
+				</ul>
+			</c:if>
+		</c:catch>
+		<br />
 		<c:url value="/logout" var="logoutUrl" />
 		<form id="logout" action="${logoutUrl}" method="post" >
 		  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

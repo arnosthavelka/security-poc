@@ -2,6 +2,8 @@ package com.github.aha.poc.security.controller;
 
 import java.util.Map;
 
+import javax.annotation.security.RolesAllowed;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -47,4 +49,12 @@ public class LoginController {
 
 		return "userPage";
 	}
+
+	@RequestMapping(value = ActionConsts.ADMIN, method = RequestMethod.GET)
+	@RolesAllowed("ROLE_ADMIN")
+	public String adminPage() {
+
+		return "adminPage";
+	}
+
 }

@@ -4,7 +4,7 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 auth:
-  type: APACHE_DS # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
+  type: IN_MEMORY # IN_MEMORY, APACHE_DS, ACTIVE_DIRECTORY
   ad:
     domain: my.domain.com
     url: ldap://my.domain.com:389/
@@ -12,14 +12,5 @@ auth:
   
 logging:
   level:
-    com:
-      github:
-        aha:
-          poc:
-            security: DEBUG
-    org:
-      springframework:
-        security:
-          ldap:
-            authentication:
-              ad: DEBUG
+    com.github.aha.poc.security: DEBUG
+    org.springframework.security.ldap.authentication.ad: DEBUG

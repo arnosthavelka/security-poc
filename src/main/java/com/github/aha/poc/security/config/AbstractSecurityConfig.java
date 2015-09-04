@@ -11,7 +11,7 @@ public abstract class AbstractSecurityConfig extends WebSecurityConfigurerAdapte
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers(ActionConsts.ROOT, ActionConsts.HOME).permitAll()
-				.antMatchers(ActionConsts.ADMIN).access("hasRole('ROLE_ADMIN')")
+				// .antMatchers(ActionConsts.ADMIN).access("hasRole('ROLE_ADMIN')")
 				.anyRequest().authenticated().and()
 			.formLogin()
 				.loginPage(ActionConsts.LOGIN)

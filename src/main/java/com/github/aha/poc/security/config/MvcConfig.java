@@ -22,7 +22,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     	registry.addViewController(ActionConsts.ROOT).setViewName("welcomePage");
     	registry.addViewController(ActionConsts.WELCOME).setViewName("welcomePage");
         registry.addViewController(ActionConsts.HOME).setViewName("homePage");
-        registry.addViewController(ActionConsts.ADMIN).setViewName("adminPage");
         registry.addViewController(ActionConsts.ERROR_403).setViewName("error/error403");
     }
 	
