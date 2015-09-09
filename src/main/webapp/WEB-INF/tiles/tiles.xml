@@ -6,7 +6,6 @@
 
 	<!-- Templates -->
 	<definition name="layout.basic" template="/WEB-INF/tiles/view/common/layout.jsp">
-		<put-attribute name="title" value="Spring Web MVC with Tiles 3" />
 		<put-attribute name="header" value="/WEB-INF/tiles/view/common/header.jsp" />
 		<put-attribute name="body" value="" />
 		<put-attribute name="footer" value="/WEB-INF/tiles/view/common/footer.jsp" />
@@ -14,27 +13,33 @@
 	
 	<!-- Pages -->	
 	<definition name="welcome" extends="layout.basic">
+		<put-attribute name="title" value="welcome.title" />	
 		<put-attribute name="body" value="/WEB-INF/tiles/view/welcome.jsp" />
 	</definition>
 	
 	<definition name="home" extends="layout.basic">
+		<put-attribute name="title" value="home.title" />
 		<put-attribute name="body" value="/WEB-INF/tiles/view/home.jsp" />
 	</definition>
 	
 	<definition name="login" extends="layout.basic">
+		<put-attribute name="title" value="login.title" />
 		<put-attribute name="body" value="/WEB-INF/tiles/view/login.jsp" />
 	</definition>
 
 	<definition name="user" extends="layout.basic">
+		<put-attribute name="title" value="user.title" />
 		<put-attribute name="body" value="/WEB-INF/tiles/view/user.jsp" />
 	</definition>
 	
 	<definition name="admin" extends="layout.basic">
+		<put-attribute name="title" value="admin.title" />
 		<put-attribute name="body" value="/WEB-INF/tiles/view/admin.jsp" />
 	</definition>
 
 	<!-- Error pages -->
 	<definition name="error403" extends="layout.basic">
+		<put-attribute name="title" value="error403.title" />
 		<put-attribute name="body" value="/WEB-INF/tiles/view/errors/error403.jsp" />
 	</definition>
 
