@@ -35,7 +35,7 @@ public class LoginController {
 			model.put("loginMessage", resource.getMessage("login.successful", null, LocaleContextHolder.getLocale()));
 		}
 
-		return "loginPage";
+		return "login";
 	}
 	
 	@RequestMapping(value = ActionConsts.USER, method = RequestMethod.GET)
@@ -47,14 +47,14 @@ public class LoginController {
 			model.put("userDetail", ud);
 		}
 
-		return "userPage";
+		return "user";
 	}
 
 	@RequestMapping(value = ActionConsts.ADMIN, method = RequestMethod.GET)
 	@RolesAllowed("ROLE_ADMIN")
 	public String adminPage() {
 
-		return "adminPage";
+		return "admin";
 	}
 
 }

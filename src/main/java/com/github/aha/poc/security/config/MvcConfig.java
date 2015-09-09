@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import com.github.aha.poc.security.controller.ActionConsts;
 
@@ -19,10 +21,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
-    	registry.addViewController(ActionConsts.ROOT).setViewName("welcomePage");
-    	registry.addViewController(ActionConsts.WELCOME).setViewName("welcomePage");
-        registry.addViewController(ActionConsts.HOME).setViewName("homePage");
-        registry.addViewController(ActionConsts.ERROR_403).setViewName("error/error403");
+		registry.addViewController(ActionConsts.ROOT).setViewName("welcome");
+		registry.addViewController(ActionConsts.WELCOME).setViewName("welcome");
+		registry.addViewController(ActionConsts.HOME).setViewName("home");
+		registry.addViewController(ActionConsts.ERROR_403).setViewName("error403");
     }
 	
 	@Bean
@@ -33,5 +35,32 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
                 container.addErrorPages(new ErrorPage(HttpStatus.FORBIDDEN, ActionConsts.ERROR_403));
             }
         };
-	}	
+	}
+
+	/**
+	 * Initialize Tiles on application startup and identify the location of the
+	 * tiles configuration file, tiles.xml.
+	 * 
+	 * @return tiles configurer
+	 */
+	@Bean
+	public TilesConfigurer tilesConfigurer() {
+		final TilesConfigurer configurer = new TilesConfigurer();
+		configurer.setDefinitions(new String[] { "/WEB-INF/tiles/tiles.xml" });
+		configurer.setCheckRefresh(true);
+		return configurer;
+	}
+
+	/**
+	 * Introduce a Tiles view resolver, this is a convenience implementation
+	 * that extends URLBasedViewResolver.
+	 * 
+	 * @return tiles view resolver
+	 */
+	@Bean
+	public TilesViewResolver tilesViewResolver() {
+		final TilesViewResolver resolver = new TilesViewResolver();
+		// resolver.setViewClass(TilesView.class);
+		return resolver;
+	}
 }
