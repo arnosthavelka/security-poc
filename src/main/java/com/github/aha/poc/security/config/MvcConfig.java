@@ -59,8 +59,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Bean
 	public TilesViewResolver tilesViewResolver() {
-		final TilesViewResolver resolver = new TilesViewResolver();
-		// resolver.setViewClass(TilesView.class);
-		return resolver;
+		return new TilesViewResolver();
 	}
 }

@@ -52,6 +52,7 @@ public class LoginController {
 
 	@RequestMapping(value = ActionConsts.ADMIN, method = RequestMethod.GET)
 	@RolesAllowed("ROLE_ADMIN")
+	// @Secured("ROLE_ADMIN")
 	public String adminPage() {
 
 		return "admin";
