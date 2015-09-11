@@ -10,7 +10,7 @@ import com.github.aha.poc.security.controller.ActionConsts;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(jsr250Enabled = true) // or securedEnabled = true for @Secured
+@EnableGlobalMethodSecurity(jsr250Enabled = true, prePostEnabled = true)
 public abstract class AbstractSecurityConfig extends WebSecurityConfigurerAdapter {
 	
     @Override

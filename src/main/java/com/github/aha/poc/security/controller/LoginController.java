@@ -7,6 +7,7 @@ import javax.annotation.security.RolesAllowed;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value = ActionConsts.USER, method = RequestMethod.GET)
+	@PreAuthorize("hasRole('ROLE_DEVELOPERS') or principal.username == 'aha'")
 	public String userPage(Map<String, Object> model) {
 
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -52,7 +54,6 @@ public class LoginController {
 
 	@RequestMapping(value = ActionConsts.ADMIN, method = RequestMethod.GET)
 	@RolesAllowed("ROLE_ADMIN")
-	// @Secured("ROLE_ADMIN")
 	public String adminPage() {
 
 		return "admin";
