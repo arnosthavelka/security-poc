@@ -11,12 +11,16 @@
 <form name='loginForm' action="<c:url value='/login' />" method='POST'>
 	<table>
 		<tr>
-			<td>UserName:</td>
+			<td><spring:message code="login.username"/></td>
 			<td><input type='text' name='username' value=''></td>
 		</tr>
 		<tr>
-			<td>Password:</td>
+			<td><spring:message code="login.password"/></td>
 			<td><input type='password' name='password' /></td>
+		</tr>
+		<tr>
+			<td><spring:message code="login.rememberMe"/></td>
+			<td><input id="remember_me" name="remember-me" type="checkbox"/></td>
 		</tr>
 		<tr>
 			<td colspan='2'><input name="submit" type="submit" value="submit" /></td>

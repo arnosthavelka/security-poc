@@ -24,6 +24,9 @@ public abstract class AbstractSecurityConfig extends WebSecurityConfigurerAdapte
 				.defaultSuccessUrl(ActionConsts.HOME)
 				.permitAll()
 				.usernameParameter("username").passwordParameter("password").and()
+			.rememberMe()
+				.tokenValiditySeconds(2419200)
+				.key("ahaKey").and()
 			.logout()
 				.permitAll();
 
