@@ -1,12 +1,12 @@
 package com.github.aha.poc.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 
 @Configuration
-@ConditionalOnProperty(prefix = "auth", name = "type", havingValue = "IN_MEMORY", matchIfMissing = true)
+@Profile("IN_MEMORY")
 public class InMemorySecurityConfig extends AbstractSecurityConfig {
 	
 	@Autowired

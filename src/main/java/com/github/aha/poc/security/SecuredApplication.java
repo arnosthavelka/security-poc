@@ -9,6 +9,7 @@ import org.springframework.boot.context.web.SpringBootServletInitializer;
 public class SecuredApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws Throwable {
+		System.setProperty("spring.profiles.default", "IN_MEMORY");
         SpringApplication.run(SecuredApplication.class, args);
     }
 
