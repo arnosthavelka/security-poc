@@ -8,7 +8,7 @@
 	<div>${loginMessage}</div>
 </c:if>
 
-<form name='login' action="<c:url value='/login' />" method='POST'>
+<form name='loginForm' action="<c:url value='/login' />" method='POST'>
 	<table>
 		<tr>
 			<td>UserName:</td>
@@ -24,3 +24,18 @@
 	</table>
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 </form>
+
+<script type="text/javascript">
+addEvent(window, 'load', function(){ init() });
+
+function addEvent(element, eventName, fn) {
+    if (element.addEventListener)
+        element.addEventListener(eventName, fn, false);
+    else if (element.attachEvent)
+        element.attachEvent('on' + eventName, fn);
+}
+
+function init() {
+	document.loginForm.username.focus();
+};
+</script>
