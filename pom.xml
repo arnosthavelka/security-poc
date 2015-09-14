@@ -53,10 +53,27 @@
 			<artifactId>spring-security-ldap</artifactId>
 		</dependency>
 		<dependency>
+			<!-- necessary for APACHE_DS profile -->
 			<groupId>org.apache.directory.server</groupId>
 			<artifactId>apacheds-server-jndi</artifactId>
 			<version>1.5.5</version>
-		</dependency>		
+		</dependency>
+		<dependency>
+			<!-- necessary for JDBC profile -->
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<!-- necessary for JDBC profile -->
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+		<dependency>
+			<!-- necessary for JDBC profile -->
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		
 		<!-- AOP -->
 		<dependency>
