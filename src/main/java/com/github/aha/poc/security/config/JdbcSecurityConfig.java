@@ -18,26 +18,28 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
 
 @Configuration
 @Profile("JDBC")
 public class JdbcSecurityConfig extends AbstractSecurityConfig {
 	
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
+	private JdbcUserService userService;
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
-		authenticationMgr.userDetailsService(new JdbcUserService(jdbcTemplate));
+		authenticationMgr.userDetailsService(userService);
 	}
 
+	@Component
 	class JdbcUserService implements UserDetailsService {
 
 		private JdbcTemplate jdbcTemplate;
 
+		@Autowired
 		public JdbcUserService(JdbcTemplate jdbcTemplate) {
 			this.jdbcTemplate = jdbcTemplate;
-
 		}
 
 		@Override
