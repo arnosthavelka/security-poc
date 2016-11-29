@@ -1,2 +1,2 @@
 <br/>
-<div>Copyright &copy; AHA 2015</div>
+<div>Copyright &copy; AHA 2015-2016</div>
