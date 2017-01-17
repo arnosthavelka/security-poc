@@ -3,7 +3,7 @@
 
 	<groupId>com.github.aha.poc.security</groupId>
 	<artifactId>security-poc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<description>Playing with Spring Security</description> 
   
@@ -17,7 +17,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
+		<version>1.5.3.RELEASE</version>
 		<relativePath />
 		<!-- lookup parent from repository -->
 	</parent>
@@ -100,6 +100,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+			    <groupId>external.atlassian.jgitflow</groupId>
+			    <artifactId>jgitflow-maven-plugin</artifactId>
+			    <version>1.0-m5.1</version>
+			    <configuration>
+					<!-- Prevents deployments since there's not maven repo -->
+					<noDeploy>true</noDeploy>
+			    </configuration>
+			</plugin>			
 		</plugins>
 	</build>
 
