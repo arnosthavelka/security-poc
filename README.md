@@ -1,4 +1,6 @@
 # security-poc
+[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
+
 POC of Spring Security usage with these features:
 - based on Spring Boot 1.3 & Java 8
 - authentication (different profiles) & authorization
@@ -18,3 +20,12 @@ ACTIVE_DIRECTORY | Authentication provider | with Active Directory
 
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
+
+[travis-url-main]: https://travis-ci.org/arnosthavelka/security-poc
+[travis-image]: https://travis-ci.org/arnosthavelka/security-poc.svg?branch=develop
+
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
+[sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=alert_status
+[sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=coverage
+[sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=bugs
+[sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=vulnerabilities
