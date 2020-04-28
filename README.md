@@ -24,7 +24,7 @@ Profile usage:
 [travis-url-main]: https://travis-ci.org/arnosthavelka/security-poc
 [travis-image]: https://travis-ci.org/arnosthavelka/security-poc.svg?branch=develop
 
-[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_junit-poc
+[sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_security-poc
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=alert_status
 [sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=coverage
 [sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=bugs
