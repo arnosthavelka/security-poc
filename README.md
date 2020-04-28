@@ -2,7 +2,7 @@
 [![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
 POC of Spring Security usage with these features:
-- based on Spring Boot 1.3 & Java 8
+- based on Spring Boot 1.3 & Java 8 (TOBE updated soon)
 - authentication (different profiles) & authorization
 - JSP + JSTL
 - Apache Tiles (templating)
