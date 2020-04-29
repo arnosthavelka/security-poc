@@ -13,6 +13,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<jacoco.version>0.8.5</jacoco.version>
+		<surefire-plugin>2.22.2</surefire-plugin>
 	</properties>
 
 	<parent>
@@ -101,6 +102,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${surefire-plugin}</version>
+				</plugin>
 			<plugin>
 			    <groupId>external.atlassian.jgitflow</groupId>
 			    <artifactId>jgitflow-maven-plugin</artifactId>
