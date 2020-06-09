@@ -12,9 +12,10 @@ public class InMemorySecurityConfig extends AbstractSecurityConfig {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
 		authenticationMgr.inMemoryAuthentication()
-		.withUser("aha").password("aha").authorities("ROLE_USER")
+				.withUser("aha").password("{noop}aha").authorities(
+						"ROLE_USER")
 		.and()
-		.withUser("admin").password("admin").authorities("ROLE_USER", "ROLE_ADMIN");
+				.withUser("admin").password("{noop}admin").authorities("ROLE_USER", "ROLE_ADMIN");
 	}
 
 }
