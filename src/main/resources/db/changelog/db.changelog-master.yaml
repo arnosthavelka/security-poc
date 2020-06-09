@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: db.changelog-master.sql
+      author: arnost.havelka
+      changes:
+        - sqlFile:
+            encoding: utf8
+            path: db.changelog-master.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

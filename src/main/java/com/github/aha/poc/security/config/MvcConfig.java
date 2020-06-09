@@ -1,48 +1,41 @@
 package com.github.aha.poc.security.config;
 
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.boot.web.servlet.ErrorPage;
+import static com.github.aha.poc.security.controller.ActionConsts.ERROR_403;
+import static com.github.aha.poc.security.controller.ActionConsts.HOME;
+import static com.github.aha.poc.security.controller.ActionConsts.ROOT;
+import static com.github.aha.poc.security.controller.ActionConsts.WELCOME;
+import static org.springframework.http.HttpStatus.FORBIDDEN;
+
+import org.springframework.boot.web.server.ErrorPage;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
-import com.github.aha.poc.security.controller.ActionConsts;
-
 /**
  * @see http://www.journaldev.com/8748/spring-4-mvc-security-managing-roles-example
+ * @see https://www.baeldung.com/embeddedservletcontainercustomizer-configurableembeddedservletcontainer-spring-boot
  */
 @Configuration
-public class MvcConfig extends WebMvcConfigurerAdapter {
+public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController(ActionConsts.ROOT).setViewName("welcome");
-		registry.addViewController(ActionConsts.WELCOME).setViewName("welcome");
-		registry.addViewController(ActionConsts.HOME).setViewName("home");
-		registry.addViewController(ActionConsts.ERROR_403).setViewName("error403");
+		registry.addViewController(ROOT).setViewName("welcome");
+		registry.addViewController(WELCOME).setViewName("welcome");
+		registry.addViewController(HOME).setViewName("home");
+		registry.addViewController(ERROR_403).setViewName("error403");
     }
 	
 	@Bean
-	public EmbeddedServletContainerCustomizer containerCustomizer() {
-        return new EmbeddedServletContainerCustomizer() {
-            @Override
-            public void customize(ConfigurableEmbeddedServletContainer container) {
-                container.addErrorPages(new ErrorPage(HttpStatus.FORBIDDEN, ActionConsts.ERROR_403));
-            }
-        };
+	public WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> containerCustomizer() {
+		return (ConfigurableServletWebServerFactory container) -> container.addErrorPages(new ErrorPage(FORBIDDEN, ERROR_403));
 	}
 
-	/**
-	 * Initialize Tiles on application startup and identify the location of the
-	 * tiles configuration file, tiles.xml.
-	 * 
-	 * @return tiles configurer
-	 */
 	@Bean
 	public TilesConfigurer tilesConfigurer() {
 		final TilesConfigurer configurer = new TilesConfigurer();
@@ -51,12 +44,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		return configurer;
 	}
 
-	/**
-	 * Introduce a Tiles view resolver, this is a convenience implementation
-	 * that extends URLBasedViewResolver.
-	 * 
-	 * @return tiles view resolver
-	 */
 	@Bean
 	public TilesViewResolver tilesViewResolver() {
 		return new TilesViewResolver();
