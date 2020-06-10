@@ -1,22 +1,27 @@
 # security-poc
 [![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
 
-POC of Spring Security usage with these features:
-- based on Spring Boot 1.3 & Java 8 (TOBE updated soon)
+The project demonstrates several different approaches to use Spring Security (see table bellow). These approaches are usable by Spring profiles. 
+
+## Pre-requisities
+* JDK 8
+* Maven 3.6
+* Lombok (installed into the IDE)
+
+## Features
 - authentication (different profiles) & authorization
 - JSP + JSTL
-- Apache Tiles (templating)
+- Apache Tiles (HTML templates)
 - (currently) no testing
 
-POC contains several Spring profiles to demonstrate several different configuration options (see table bellow).
-
-Profile name | Type | Note
-------------- | ------------- | -------------
-IN_MEMORY | **In-Memory** | Default profile
-JDBC | JDBC  | via jdbcAuthentication method (maven dependencies for embbeded DB)
-USER_DETAIL_SERVICE | JDBC  | via User Detail Service (maven dependencies for embbeded DB)
-APACHE_DS | LDAP  | with Apache DS (maven dependencies for Apache DS)
-ACTIVE_DIRECTORY | Authentication provider | with Active Directory
+## Profiles
+| Profile name        | Type                    | Password encoder | Note             |
+| ------------------- | ----------------------- | ---------------- | ----------------
+| IN_MEMORY           | In-Memory               | delegating       | Default profile (no PasswordEncoder used)
+| JDBC                | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
+| USER_DETAIL_SERVICE | JDBC                    | TODO | via User Detail Service (maven dependencies for embbeded DB)
+| APACHE_DS           | LDAP                    | TODO | with Apache DS (maven dependencies for Apache DS)
+| ACTIVE_DIRECTORY    | Authentication provider | TODO | with Active Directory
 
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
