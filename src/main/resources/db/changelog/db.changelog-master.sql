@@ -9,8 +9,8 @@ create table u_principal (
 --rollback drop table u_principal;
 
 --changeset aha:2
-insert into u_principal(id, username, passwd) values (1, 'aha', 'aha');
-insert into u_principal(id, username, passwd) values (2, 'admin', 'admin');
+insert into u_principal(id, username, passwd) values (1, 'aha', '{noop}aha');
+insert into u_principal(id, username, passwd) values (2, 'admin', '{noop}admin');
 
 --changeset aha:3
 create table u_role (

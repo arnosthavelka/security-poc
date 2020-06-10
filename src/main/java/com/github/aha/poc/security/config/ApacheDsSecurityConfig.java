@@ -7,8 +7,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 
 @Configuration
 @Profile("APACHE_DS")
-// @ConditionalOnClass(org.apache.directory.server.core.DefaultDirectoryService.class)
-// @ConditionalOnProperty(prefix = "auth", name = "type", havingValue = "APACHE_DS")
 public class ApacheDsSecurityConfig extends AbstractSecurityConfig {
 	
 	@Autowired
