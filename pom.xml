@@ -9,11 +9,13 @@
   
 	<properties>
 		<!-- Generic properties -->
-		<java.version>1.8</java.version>
+		<java.version>14</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<jacoco.version>0.8.5</jacoco.version>
 		<surefire-plugin>2.22.2</surefire-plugin>
+		
+		<apacheds-server-jndi.version>1.5.7</apacheds-server-jndi.version>
 	</properties>
 
 	<parent>
@@ -58,7 +60,7 @@
 			<!-- necessary for APACHE_DS profile -->
 			<groupId>org.apache.directory.server</groupId>
 			<artifactId>apacheds-server-jndi</artifactId>
-			<version>1.5.5</version>
+			<version>${apacheds-server-jndi.version}</version>
 		</dependency>
 		<dependency>
 			<!-- necessary for JDBC profile -->
@@ -119,43 +121,6 @@
 		</plugins>
 	</build>
 
-	<repositories>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	
 	<profiles>
 		<profile>
 			<id>coverage</id>

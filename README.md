@@ -4,7 +4,7 @@
 The project demonstrates several different approaches to use Spring Security (see table bellow). These approaches are usable by Spring profiles. 
 
 ## Pre-requisities
-* JDK 8
+* JDK 14
 * Maven 3.6
 * Lombok (installed into the IDE)
 
@@ -20,7 +20,7 @@ The project demonstrates several different approaches to use Spring Security (se
 | IN_MEMORY           | In-Memory               | delegating       | Default profile (no PasswordEncoder used)
 | JDBC                | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
 | USER_DETAIL_SERVICE | JDBC                    | custom service   | via User Detail Service (maven dependencies for embbeded DB)
-| APACHE_DS           | LDAP                    | native           | with Apache DS (maven dependencies for Apache DS)
+| APACHE_DS           | LDAP                    | native           | with Apache DS (maven dependencies for Apache DS) -> To be fixed !!!
 | ACTIVE_DIRECTORY    | Authentication provider | native           | with Active Directory
 
 Profile usage:
