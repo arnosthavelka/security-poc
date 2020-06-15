@@ -6,7 +6,6 @@ The project demonstrates several different approaches to use Spring Security (se
 ## Pre-requisities
 * JDK 14
 * Maven 3.6
-* Lombok (installed into the IDE)
 
 ## Features
 - authentication (different profiles) & authorization
@@ -15,13 +14,13 @@ The project demonstrates several different approaches to use Spring Security (se
 - (currently) no testing
 
 ## Profiles
-| Profile name        | Type                    | Password encoder | Note             |
-| ------------------- | ----------------------- | ---------------- | ----------------
-| IN_MEMORY           | In-Memory               | delegating       | Default profile (no PasswordEncoder used)
-| JDBC                | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
-| USER_DETAIL_SERVICE | JDBC                    | custom service   | via User Detail Service (maven dependencies for embbeded DB)
-| APACHE_DS           | LDAP                    | native           | with Apache DS (maven dependencies for Apache DS) -> To be fixed !!!
-| ACTIVE_DIRECTORY    | Authentication provider | native           | with Active Directory
+| Type                    | Maven Profile       | Spring Profile          | Password encoder | Note             |
+| ----------------------- | ------------------- | ----------------------- | ---------------- | ----------------
+| In-Memory (default)     | MEM                 | IN_MEMORY               | delegating       | Default profile (no PasswordEncoder used)
+| Databss                 | DB                  | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
+| Custom service          | USER_SERVICE        | USER_DETAIL_SERVICE     | custom service   | via User Detail Service (maven dependencies for embbeded DB)
+| LDAP                    | LDAP                | APACHE_DS               | native           | with Apache DS (maven dependencies for Apache DS) -> To be fixed !!!
+| Authentication provider | AD                  | ACTIVE_DIRECTORY        | native           | with Active Directory
 
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC

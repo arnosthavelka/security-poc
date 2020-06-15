@@ -1,3 +1,7 @@
+spring:
+  profiles:
+    active=@spring.profiles.active@
+    
 auth:
   ad:
     domain: my.domain.com
