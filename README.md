@@ -6,7 +6,6 @@ The project demonstrates several different approaches to use Spring Security (se
 ## Pre-requisities
 * JDK 14
 * Maven 3.6
-* Lombok (installed into the IDE)
 
 ## Features
 - authentication (different profiles) & authorization
