@@ -1,12 +1,14 @@
 package com.github.aha.poc.security.config;
 
+import static com.github.aha.poc.security.controller.ActionConsts.HOME;
+import static com.github.aha.poc.security.controller.ActionConsts.LOGIN;
+import static com.github.aha.poc.security.controller.ActionConsts.ROOT;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
-import com.github.aha.poc.security.controller.ActionConsts;
 
 @Configuration
 @EnableWebSecurity
@@ -16,12 +18,13 @@ public abstract class AbstractSecurityConfig extends WebSecurityConfigurerAdapte
     @Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers(ActionConsts.ROOT, ActionConsts.HOME).permitAll()
+				.antMatchers(ROOT, HOME, "/actuator/**").permitAll()
+				
 				// .antMatchers(ActionConsts.ADMIN).access("hasRole('ROLE_ADMIN')")
 				.anyRequest().authenticated().and()
 			.formLogin()
-				.loginPage(ActionConsts.LOGIN)
-				.defaultSuccessUrl(ActionConsts.HOME)
+				.loginPage(LOGIN)
+				.defaultSuccessUrl(HOME)
 				.permitAll()
 				.usernameParameter("username").passwordParameter("password").and()
 			.rememberMe()

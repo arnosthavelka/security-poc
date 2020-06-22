@@ -1,16 +1,9 @@
 spring:
   profiles:
-    active=@spring.profiles.active@
-    
-auth:
-  ad:
-    domain: my.domain.com
-    url: ldap://my.domain.com:389/
-    filter: (&(sAMAccountName={0})(objectclass=user))
+    active: @spring.profiles.active@
 
-liquibase:
-  change-log: classpath:/db/changelog/db.changelog-master.sql
-    
+management:
+  endpoints:    web:      exposure:        include: info, health, mappings
 logging:
   level:
     com.github.aha.poc.security: DEBUG

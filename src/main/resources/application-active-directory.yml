@@ -1,0 +1,5 @@
+auth:
+  ad:
+    domain: my.domain.com
+    url: ldap://my.domain.com:389/
+    filter: (&(sAMAccountName={0})(objectclass=user))
