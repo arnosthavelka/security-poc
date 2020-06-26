@@ -3,8 +3,7 @@ spring:
     active: @spring.profiles.active@
 
 management:
-  endpoints:    web:      exposure:        include: info, health, mappings
+  endpoints:    web:      exposure:        include: info, health, mappings
 logging:
   level:
     com.github.aha.poc.security: DEBUG
-    org.springframework.security.ldap.authentication.ad: DEBUG

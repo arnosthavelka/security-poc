@@ -1,5 +1,10 @@
 package com.github.aha.poc.security.controller;
 
+import static com.github.aha.poc.security.controller.ActionConsts.ADMIN;
+import static com.github.aha.poc.security.controller.ActionConsts.LOGIN;
+import static com.github.aha.poc.security.controller.ActionConsts.USER;
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
 import java.util.Map;
 
 import javax.annotation.security.RolesAllowed;
@@ -12,7 +17,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -24,7 +28,7 @@ public class LoginController {
 	@Autowired
 	private MessageSource resource;
 
-	@RequestMapping(value = ActionConsts.LOGIN, method = RequestMethod.GET)
+	@RequestMapping(value = LOGIN, method = GET)
 	public String loginPage(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Map<String, Object> model) {
 
@@ -39,7 +43,7 @@ public class LoginController {
 		return "login";
 	}
 	
-	@RequestMapping(value = ActionConsts.USER, method = RequestMethod.GET)
+	@RequestMapping(value = USER, method = GET)
 	@PreAuthorize("hasRole('ROLE_DEVELOPERS') or principal.username == 'aha'")
 	public String userPage(Map<String, Object> model) {
 
@@ -52,7 +56,7 @@ public class LoginController {
 		return "user";
 	}
 
-	@RequestMapping(value = ActionConsts.ADMIN, method = RequestMethod.GET)
+	@RequestMapping(value = ADMIN, method = GET)
 	@RolesAllowed("ROLE_ADMIN")
 	public String adminPage() {
 

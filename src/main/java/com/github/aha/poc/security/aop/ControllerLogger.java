@@ -13,9 +13,6 @@ public class ControllerLogger {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(ControllerLogger.class);
 
-	/**
-	 * Just AOP example (to verify the functionality)
-	 */
     @Before("execution(* com.github.aha.poc..*Controller.*(..))")
     public void logLogin(JoinPoint joinPoint) {
     	LOG.info("Controller method {} called ...", joinPoint.getSignature().getName());
