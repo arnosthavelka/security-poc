@@ -13,7 +13,7 @@ import org.springframework.security.ldap.authentication.ad.ActiveDirectoryLdapAu
 import com.github.aha.poc.security.controller.ActionConsts;
 
 @Configuration
-@Profile("ACTIVE_DIRECTORY")
+@Profile("AD")
 public class ActiveDirectorySecurityConfig extends WebSecurityConfigurerAdapter {
 	
     @Value("${auth.ad.domain}")

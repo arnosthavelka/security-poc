@@ -172,7 +172,7 @@
 		<profile>
 			<id>AD</id>
 	        <properties>
-	            <spring.profiles.active>ACTIVE_DIRECTORY</spring.profiles.active>
+	            <spring.profiles.active>AD</spring.profiles.active>
 	        </properties>
 		</profile>
 		<profile>

@@ -11,6 +11,7 @@ The project demonstrates several different approaches to use Spring Security (se
 - authentication (different profiles) & authorization
 - JSP + JSTL
 - Apache Tiles (HTML templates)
+- Actuator
 - (currently) no testing
 
 ## Profiles
@@ -20,7 +21,7 @@ The project demonstrates several different approaches to use Spring Security (se
 | Database                | DB                  | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
 | Custom service          | USER_SERVICE        | USER_DETAIL_SERVICE     | custom service   | via User Detail Service (maven dependencies for embbeded DB)
 | LDAP                    | LDAP                | APACHE_DS               | native           | with Apache DS (maven dependencies for Apache DS) -> To be fixed !!!
-| Authentication provider | AD                  | ACTIVE_DIRECTORY        | native           | with Active Directory
+| Authentication provider | AD                  | AD                      | native           | with Active Directory
 
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
