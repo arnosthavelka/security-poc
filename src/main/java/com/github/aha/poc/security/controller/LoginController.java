@@ -57,7 +57,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = ADMIN, method = GET)
-	@RolesAllowed("ROLE_ADMIN")
+	@RolesAllowed("ROLE_ADMINS")
 	public String adminPage() {
 
 		return "admin";

@@ -6,7 +6,7 @@
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
 		<a href="${pageContext.request.contextPath}/home"><s:message code="home.label"/></a> |
 		<a href="${pageContext.request.contextPath}/user" <sc:authorize access="hasRole('ROLE_DEVELOPERS') or (principal.username == 'aha')">style="color:green"</sc:authorize>><s:message code="user.label"/></a> | 
-		<a href="${pageContext.request.contextPath}/admin" <sc:authorize access="!hasRole('ROLE_ADMIN')">style="color:red"</sc:authorize>><s:message code="admin.label"/></a> |
+		<a href="${pageContext.request.contextPath}/admin" <sc:authorize access="!hasRole('ROLE_ADMINS')">style="color:red"</sc:authorize>><s:message code="admin.label"/></a> |
 	    <a href="javascript:document.getElementById('logout').submit()"><s:message code="logout.label"/></a>
 
 		<c:url value="/logout" var="logoutUrl" />

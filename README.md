@@ -20,7 +20,7 @@ The project demonstrates several different approaches to use Spring Security (se
 | In-Memory (default)     | MEM                 | IN_MEMORY               | delegating       | Default profile (no PasswordEncoder used)
 | Database                | DB                  | JDBC                    | none             | via jdbcAuthentication method (maven dependencies for embbeded DB)
 | Custom service          | USER_SERVICE        | USER_DETAIL_SERVICE     | custom service   | via User Detail Service (maven dependencies for embbeded DB)
-| LDAP                    | LDAP                | APACHE_DS               | native           | with Apache DS (maven dependencies for Apache DS) -> To be fixed !!!
+| LDAP                    | LDAP                | LDAP                    | BCrypt hashing   | with UnboundId
 | Authentication provider | AD                  | AD                      | native           | with Active Directory
 
 Profile usage:

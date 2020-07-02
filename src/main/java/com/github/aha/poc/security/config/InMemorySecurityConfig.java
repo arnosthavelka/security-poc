@@ -19,9 +19,9 @@ public class InMemorySecurityConfig extends AbstractSecurityConfig {
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
 		PasswordEncoder encoder = createDelegatingPasswordEncoder();
 		authenticationMgr.inMemoryAuthentication()
-				.withUser("aha").password(encoder.encode("aha")).authorities("ROLE_USER")
+				.withUser("aha").password(encoder.encode("aha")).authorities("ROLE_USERS")
 		.and()
-				.withUser("admin").password(encoder.encode("admin")).authorities("ROLE_USER", "ROLE_ADMIN");
+				.withUser("admin").password(encoder.encode("admin")).authorities("ROLE_USERS", "ROLE_ADMINS");
 	}
 
 }

@@ -55,7 +55,7 @@ public class UserDetailServiceSecurityConfig extends AbstractSecurityConfig {
 			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 			List<Map<String, Object>> data = jdbcTemplate.queryForList("select name from u_role where user_id = :id", user.getId());
 			for (Map<String, Object> item : data) {
-				var role = (String) item.get("NAME");
+				var role = "ROLE_" + item.get("NAME");
 				authorities.add(new SimpleGrantedAuthority(role));
 			}
 

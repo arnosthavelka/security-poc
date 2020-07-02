@@ -21,6 +21,6 @@ create table u_role (
 --rollback drop table u_role;
 
 --changeset aha:4
-insert into u_role(id, user_id, name) values (1, 1, 'ROLE_USER');
-insert into u_role(id, user_id, name) values (2, 2, 'ROLE_DEVELOPERS');
-insert into u_role(id, user_id, name) values (3, 2, 'ROLE_ADMIN');
+insert into u_role(id, user_id, name) values (1, 1, 'USERS');
+insert into u_role(id, user_id, name) values (2, 2, 'DEVELOPERS');
+insert into u_role(id, user_id, name) values (3, 2, 'ADMINS');

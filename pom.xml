@@ -77,6 +77,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 
@@ -159,13 +165,16 @@
 		<profile>
 			<id>LDAP</id>
 	        <properties>
-	            <spring.profiles.active>APACHE_DS</spring.profiles.active>
+	            <spring.profiles.active>LDAP</spring.profiles.active>
 	        </properties>
 			<dependencies>
 				<dependency>
-					<groupId>org.apache.directory.server</groupId>
-					<artifactId>apacheds-server-jndi</artifactId>
-					<version>${apacheds-server-jndi.version}</version>
+					<groupId>org.springframework.security</groupId>
+					<artifactId>spring-security-ldap</artifactId>
+				</dependency>
+				<dependency>
+					<groupId>com.unboundid</groupId>
+					<artifactId>unboundid-ldapsdk</artifactId>
 				</dependency>
 			</dependencies>
 		</profile>

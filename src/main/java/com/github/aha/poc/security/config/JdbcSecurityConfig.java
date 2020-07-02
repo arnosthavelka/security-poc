@@ -19,6 +19,6 @@ public class JdbcSecurityConfig extends AbstractSecurityConfig {
 		authenticationMgr.jdbcAuthentication().dataSource(dataSource)
 				.usersByUsernameQuery("select username, passwd, 1 from u_principal where username = ?")
 				.authoritiesByUsernameQuery(
-						"select p.username, r.name from u_role r, u_principal p where p.id = r.user_id and p.username = ?");
+						"select p.username, 'ROLE_' + r.name from u_role r, u_principal p where p.id = r.user_id and p.username = ?");
 	}
 }
