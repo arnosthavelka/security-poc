@@ -28,25 +28,25 @@ objectclass: top
 objectclass: organizationalUnit
 ou: otherpeople
 
-dn: uid=ben,ou=people,dc=springframework,dc=org
+dn: uid=admin,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
 cn: Ben Alex
 sn: Alex
-uid: ben
-userPassword: {SHA}nFCebWjxfaLbHHG1Qk5UU4trbvQ=
+uid: admin
+userPassword: $2a$10$aDppFgj6HkNYubpuI9kMEO6cgBx3TcFPqFrUu3pdfiJtGQ1lIky7y
 
-dn: uid=bob,ou=people,dc=springframework,dc=org
+dn: uid=aha,ou=people,dc=springframework,dc=org
 objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
-cn: Bob Hamilton
-sn: Hamilton
-uid: bob
-userPassword: bobspassword
+cn: Arnost Havelka
+sn: Havelka
+uid: aha
+userPassword: $2a$10$KZrK4/sB5WVD2QcggzOdpug28vemtNZW04huj92XxCCoUM6ZqsFqa
 
 dn: uid=joe,ou=otherpeople,dc=springframework,dc=org
 objectclass: top
@@ -102,23 +102,23 @@ userPassword: spacecadetspassword
 
 dn: cn=developers,ou=groups,dc=springframework,dc=org
 objectclass: top
-objectclass: groupOfNames
+objectclass: groupOfUniqueNames
 cn: developers
 ou: developer
-uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
-uniqueMember: uid=bob,ou=people,dc=springframework,dc=org
+uniqueMember: uid=admin,ou=people,dc=springframework,dc=org
+uniqueMember: uid=aha,ou=people,dc=springframework,dc=org
 
 dn: cn=managers,ou=groups,dc=springframework,dc=org
 objectclass: top
-objectclass: groupOfNames
+objectclass: groupOfUniqueNames
 cn: managers
 ou: manager
-uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
+uniqueMember: uid=admin,ou=people,dc=springframework,dc=org
 uniqueMember: cn=mouse\, jerry,ou=people,dc=springframework,dc=org
 
 dn: cn=submanagers,ou=subgroups,ou=groups,dc=springframework,dc=org
 objectclass: top
-objectclass: groupOfNames
+objectclass: groupOfUniqueNames
 cn: submanagers
 ou: submanager
 uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
