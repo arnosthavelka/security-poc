@@ -13,8 +13,6 @@ public class AuthenticationListener implements ApplicationListener<InteractiveAu
 	
 	@Override
 	public void onApplicationEvent(InteractiveAuthenticationSuccessEvent event) {
-//		UserDetails userDetails = (UserDetails) event.getAuthentication().getPrincipal();
-		
 		LOG.info("Authenticated user={}", event.getAuthentication().getName());
 	}
 

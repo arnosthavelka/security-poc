@@ -44,7 +44,7 @@ public class ActiveDirectorySecurityConfig extends WebSecurityConfigurerAdapter 
 
 	}
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) {
 		authenticationMgr.authenticationProvider(activeDirectoryLdapAuthenticationProvider());
 	}
 

@@ -43,7 +43,7 @@ public class UserDetailServiceSecurityConfig extends AbstractSecurityConfig {
 		}
 
 		@Override
-		public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		public UserDetails loadUserByUsername(String username) {
 			// load user details
 			UserDTO user = jdbcTemplate.queryForObject(
 					"select id, username, passwd from u_principal where username = ?", new Object[] { username }, new UserMapper());
@@ -52,7 +52,7 @@ public class UserDetailServiceSecurityConfig extends AbstractSecurityConfig {
 				throw new UsernameNotFoundException(String.format("userma=%s", username));
 			}
 			// load authorities
-			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+			List<GrantedAuthority> authorities = new ArrayList<>();
 			List<Map<String, Object>> data = jdbcTemplate.queryForList("select name from u_role where user_id = :id", user.getId());
 			for (Map<String, Object> item : data) {
 				var role = "ROLE_" + item.get("NAME");

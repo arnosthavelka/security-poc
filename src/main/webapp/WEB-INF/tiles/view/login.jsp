@@ -10,12 +10,13 @@
 
 <form name='loginForm' action="<c:url value='/login' />" method='POST'>
 	<table>
+		<caption><spring:message code="login.form.title"/></caption>
 		<tr>
-			<td><spring:message code="login.username"/></td>
+			<th><spring:message code="login.username"/></th>
 			<td><input type='text' name='username' value=''></td>
 		</tr>
 		<tr>
-			<td><spring:message code="login.password"/></td>
+			<th><spring:message code="login.password"/></th>
 			<td><input type='password' name='password' /></td>
 		</tr>
 		<tr>
