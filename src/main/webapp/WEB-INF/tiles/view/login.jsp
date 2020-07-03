@@ -12,11 +12,11 @@
 	<table>
 		<caption><spring:message code="login.form.title"/></caption>
 		<tr>
-			<th><spring:message code="login.username"/></th>
+			<th scope="row"><spring:message code="login.username"/></th>
 			<td><input type='text' name='username' value=''></td>
 		</tr>
 		<tr>
-			<th><spring:message code="login.password"/></th>
+			<th scope="row"><spring:message code="login.password"/></th>
 			<td><input type='password' name='password' /></td>
 		</tr>
 		<tr>
