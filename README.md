@@ -12,7 +12,7 @@ The project demonstrates several different approaches to use Spring Security (se
 - JSP + JSTL
 - Apache Tiles (HTML templates)
 - Actuator
-- (currently) no testing
+- (currently) no testing -> therefore quality gate is failing
 
 ## Profiles
 | Type                    | Maven Profile       | Spring Profile          | Password encoder | Note             |
