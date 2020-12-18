@@ -1,5 +1,5 @@
 # security-poc
-[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url]
+[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
 
 The project demonstrates several different approaches to use Spring Security (see table bellow). These approaches are usable by Spring profiles. 
 
@@ -26,11 +26,12 @@ The project demonstrates several different approaches to use Spring Security (se
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
 
-[travis-url-main]: https://travis-ci.org/arnosthavelka/security-poc
-[travis-image]: https://travis-ci.org/arnosthavelka/security-poc.svg?branch=develop
+[travis-url-main]: https://travis-ci.com/arnosthavelka/security-poc
+[travis-image]: https://travis-ci.com/arnosthavelka/security-poc.svg?branch=develop
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_security-poc
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=alert_status
 [sonar-coverage]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=coverage
 [sonar-bugs]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=bugs
 [sonar-vulnerabilities]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=vulnerabilities
+[mit-badge]: https://img.shields.io/badge/license-MIT-maroon.svg
