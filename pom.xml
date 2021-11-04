@@ -16,6 +16,7 @@
 		<surefire-plugin>2.22.2</surefire-plugin>
 		
 		<tiles-jsp.version>3.0.8</tiles-jsp.version>
+		<taglibs.version>1.1.2</taglibs.version>
 		<apacheds-server-jndi.version>1.5.7</apacheds-server-jndi.version>
 	</properties>
 
@@ -69,6 +70,11 @@
 		</dependency>		
 	
 		<!-- Other Web dependencies -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>${taglibs.version}</version>
+		</dependency>		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>

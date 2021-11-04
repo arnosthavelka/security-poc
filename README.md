@@ -26,7 +26,7 @@ The project demonstrates several different approaches to use Spring Security (se
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
 
-[travis-url-main]: https://travis-ci.com/arnosthavelka/security-poc
+[travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/security-poc
 [travis-image]: https://travis-ci.com/arnosthavelka/security-poc.svg?branch=develop
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_security-poc
