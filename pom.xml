@@ -3,17 +3,17 @@
 
 	<groupId>com.github.aha.poc.security</groupId>
 	<artifactId>security-poc</artifactId>
-	<version>0.3.0-SNAPSHOT</version>
+	<version>0.3.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<description>Playing with Spring Security</description> 
   
 	<properties>
 		<!-- Generic properties -->
-		<java.version>14</java.version>
+		<java.version>17</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<jacoco.version>0.8.5</jacoco.version>
-		<surefire-plugin>2.22.2</surefire-plugin>
+		<jacoco.version>0.8.7</jacoco.version>
+		<surefire-plugin>3.0.0-M5</surefire-plugin>
 		
 		<tiles-jsp.version>3.0.8</tiles-jsp.version>
 		<taglibs.version>1.1.2</taglibs.version>
@@ -23,7 +23,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.3.3.RELEASE</version>
+		<version>2.6.1</version>
 		<relativePath />
 		<!-- lookup parent from repository -->
 	</parent>

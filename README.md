@@ -4,8 +4,8 @@
 The project demonstrates several different approaches to use Spring Security (see table bellow). These approaches are usable by Spring profiles. 
 
 ## Pre-requisities
-* JDK 14
-* Maven 3.6
+* JDK 17
+* Maven 3.8
 
 ## Features
 - authentication (different profiles) & authorization
