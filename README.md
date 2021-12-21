@@ -26,7 +26,7 @@ The project demonstrates several different approaches to use Spring Security (se
 Profile usage:
 > java spring-boot:run --spring.profiles.active=JDBC
 
-_Note: we need to add some dependencies manually in profiles USER_DETAIL_SERVICE & LDAP when running in the IDE. It's working from the WAR_
+_Note: some dependencies have to be added on the classpath manually in IDE. It applies only to profiles `USER_DETAIL_SERVICE` & `LDAP`. However, it's working correctly outside IDE (running the WAR)._
 
 [travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/security-poc
 [travis-image]: https://travis-ci.com/arnosthavelka/security-poc.svg?branch=develop
