@@ -7,12 +7,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 
+import lombok.RequiredArgsConstructor;
+
 @Configuration
 @Profile("JDBC")
+@RequiredArgsConstructor
 public class JdbcSecurityConfig extends AbstractSecurityConfig {
 	
-	@Autowired
-	private DataSource dataSource;
+	private final DataSource dataSource;
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {

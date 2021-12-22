@@ -8,7 +8,6 @@ import java.util.Map;
 
 import javax.annotation.security.RolesAllowed;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,14 +17,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import lombok.RequiredArgsConstructor;
+
 /**
  * @see http://www.journaldev.com/8748/spring-4-mvc-security-managing-roles-example
  */
 @Controller
+@RequiredArgsConstructor
 public class LoginController {
 
-	@Autowired
-	private MessageSource resource;
+	private final MessageSource resource;
 
 	@GetMapping(value = LOGIN)
 	public String loginPage(@RequestParam(value = "error", required = false) String error,

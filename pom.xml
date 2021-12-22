@@ -69,7 +69,7 @@
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>		
 	
-		<!-- Other Web dependencies -->
+		<!-- Web dependencies -->
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
@@ -80,7 +80,11 @@
 			<artifactId>jstl</artifactId>
 		</dependency>		
 	
-		<!-- Test Artifacts -->
+		<!-- Others -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
