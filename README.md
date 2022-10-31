@@ -1,5 +1,5 @@
 # security-poc
-[![Travis Build Status][travis-image]][travis-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
+[![Java CI with Maven][github-image]][github-url-main] [![Sonar quality gate][sonar-quality-gate]][sonar-url] [![Sonar coverage][sonar-coverage]][sonar-url] [![Sonar bugs][sonar-bugs]][sonar-url] [![Sonar vulnerabilities][sonar-vulnerabilities]][sonar-url] [![MIT licensed][mit-badge]](./LICENSE.txt)
 
 The project demonstrates several different approaches to use Spring Security (see table bellow). These approaches are usable by Spring profiles. 
 
@@ -28,8 +28,8 @@ Profile usage:
 
 _Note: some dependencies have to be added on the classpath manually in IDE. It applies only to profiles `USER_DETAIL_SERVICE` & `LDAP`. However, it's working correctly outside IDE (running the WAR)._
 
-[travis-url-main]: https://app.travis-ci.com/github/arnosthavelka/security-poc
-[travis-image]: https://travis-ci.com/arnosthavelka/security-poc.svg?branch=develop
+[github-url-main]: https://github.com/arnosthavelka/security-poc/actions/workflows/maven.yml
+[github-image]: https://github.com/arnosthavelka/security-poc/actions/workflows/maven.yml/badge.svg
 
 [sonar-url]: https://sonarcloud.io/dashboard?id=arnosthavelka_security-poc
 [sonar-quality-gate]: https://sonarcloud.io/api/project_badges/measure?project=arnosthavelka_security-poc&metric=alert_status
