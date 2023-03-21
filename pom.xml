@@ -5,7 +5,7 @@
 
 	<groupId>com.github.aha.poc.security</groupId>
 	<artifactId>security-poc</artifactId>
-	<version>0.3.1-SNAPSHOT</version>
+	<version>0.4.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<description>Playing with Spring Security</description>
 
@@ -17,7 +17,6 @@
 		<jacoco.version>0.8.8</jacoco.version>
 		<surefire-plugin>3.0.0-M7</surefire-plugin>
 
-		<tiles-jsp.version>3.0.8</tiles-jsp.version>
 		<taglibs.version>1.2.5</taglibs.version>
 
 	</properties>
@@ -25,7 +24,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.5</version>
+		<version>2.7.9</version>
 		<relativePath />
 		<!-- lookup parent from repository -->
 	</parent>
@@ -44,11 +43,6 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.tiles</groupId>
-			<artifactId>tiles-jsp</artifactId>
-			<version>${tiles-jsp.version}</version>
 		</dependency>
 
 		<!-- Spring Security -->
@@ -88,14 +82,12 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
