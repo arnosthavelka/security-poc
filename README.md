@@ -10,7 +10,6 @@ The project demonstrates several different approaches to use Spring Security (se
 ## Features
 - authentication (different profiles) & authorization
 - JSP + JSTL
-- Apache Tiles (HTML templates)
 - Actuator
 - (currently) no testing -> therefore quality gate is failing
 
